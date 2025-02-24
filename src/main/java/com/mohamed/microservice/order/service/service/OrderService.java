@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class OrderService {
-    private  OrderRepository orderRepository;
-    private OrderMapper orderMapper;
+    private final OrderRepository orderRepository;
+    private final OrderMapper orderMapper;
 
 
-    public CreateOrderResponseDto addOrder(CreateOrderRequestDto data){
+    public CreateOrderResponseDto addOrder(CreateOrderRequestDto data) {
         Order order = this.orderMapper.toEntity(data);
         Order savedOrdered = this.orderRepository.save(order);
         return this.orderMapper.toCreateDto(savedOrdered);
