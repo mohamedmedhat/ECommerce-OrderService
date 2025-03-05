@@ -12,7 +12,7 @@ public class OrderMapper {
 
     public Order toEntity(CreateOrderRequestDto data) {
         Order order = new Order();
-        order.setId(Long.valueOf(UUID.randomUUID().toString()));
+        order.setId(UUID.randomUUID());
         order.setOrderNumber(data.getOrderNumber());
         order.setSkuCode(data.getSkuCode());
         order.setPrice(data.getPrice());
