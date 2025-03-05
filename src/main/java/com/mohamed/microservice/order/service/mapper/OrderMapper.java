@@ -10,9 +10,9 @@ import java.util.UUID;
 @Component
 public class OrderMapper {
 
-    public Order toEntity(CreateOrderRequestDto data){
+    public Order toEntity(CreateOrderRequestDto data) {
         Order order = new Order();
-        order.setId(Long.valueOf(UUID.randomUUID().toString()));
+        order.setId(UUID.randomUUID());
         order.setOrderNumber(data.getOrderNumber());
         order.setSkuCode(data.getSkuCode());
         order.setPrice(data.getPrice());
@@ -20,7 +20,7 @@ public class OrderMapper {
         return order;
     }
 
-    public CreateOrderResponseDto toCreateDto(Order order){
+    public CreateOrderResponseDto toCreateDto(Order order) {
         return new CreateOrderResponseDto(
                 order.getId(),
                 order.getOrderNumber(),

@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 @Getter
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 public class CreateOrderResponseDto {
-    private Long id;
+    private UUID id;
     private String orderNumber;
     private String skuCode;
     private BigDecimal price;
